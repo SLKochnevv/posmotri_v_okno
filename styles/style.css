@@ -50,7 +50,7 @@ ol {
 
 .content__list {
     height: 298px;
-    max-height: 100vh;
+
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
@@ -67,8 +67,7 @@ ol {
     font-weight: 700;
     line-height: 70.5px;
     color: #ffffff;
-    width: 260px;
-    height: 210px;
+
     text-transform: uppercase;
 }
 
@@ -96,10 +95,9 @@ ol {
     justify-content: flex-start;
 }
 
-.content__video-card-thumbnail {
-    object-fit: cover;
-    object-position: center;
-    height: 103px;
+.content__card-link {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .search-form__fieldset-title {
@@ -114,20 +112,20 @@ ol {
     color: #545050;
 }
 
-.content__card-link {
-    text-decoration: none;
-    color: #ffffff;
+.content__video-card-thumbnail {
+    inline-size: 194px;
+    block-size: 103px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .content__video-card-title {
-    font-family: "Fira Sans Condensed", "Arial", "Helvetica", sans-serif;
+    font-family: Oswald, sans-serif;
     font-size: 30px;
     font-weight: 700;
     line-height: 30px;
     text-transform: uppercase;
     padding-bottom: 5px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .content__video-card-description {
@@ -140,6 +138,9 @@ ol {
     padding: 3px 0px 0px 3px;
     width: 100%;
     height: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .visually-hidden {
@@ -227,17 +228,18 @@ ol {
 }
 
 .search-form__textfield:active {
-    outline: 1px solid #fff;
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+}
+
+.search-form__textfield:focus {
+    outline: none;
 }
 
 .search-form__label:has(:focus-visible) {
     outline: 1px solid #ffffff;
-    outline-offset: 1px;
+    outline-offset: 2px;
     opacity: 100%;
-}
-
-.search-form__label:hover .search-form__label-text {
-    text-decoration: underline;
 }
 
 .button:hover {
@@ -270,10 +272,6 @@ ol {
     text-decoration: none;
 }
 
-.content__video-card:active {
-    background: #545050;
-}
-
 .content__card-link_current {
     background: #545050;
 }
@@ -283,9 +281,8 @@ ol {
 }
 
 .content__card-link:focus-visible {
-    margin: 2px 2px 2px 2px;
     outline: 1px solid #ffffff;
-    outline-offset: 2px;
+    outline-offset: 1px;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
